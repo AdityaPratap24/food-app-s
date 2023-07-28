@@ -40039,18 +40039,21 @@ const Body = ()=>{
                 }, undefined) : filteredRestaurant.map((restaurant)=>{
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                         to: "/restaurant/" + restaurant.info.id,
-                        children: /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardDefault.default), {
-                            ...restaurant?.info,
-                            // user = {user}
-                            key: restaurant?.info?.id,
-                            __source: {
-                                fileName: "src/components/Body.js",
-                                lineNumber: 72,
-                                columnNumber: 19
-                            },
-                            __self: undefined
-                        })
-                    }, restaurant.info.id, false, {
+                        children: [
+                            console.log(restaurant?.info),
+                            /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardDefault.default), {
+                                ...restaurant?.info,
+                                // user = {user}
+                                key: restaurant?.info?.id,
+                                __source: {
+                                    fileName: "src/components/Body.js",
+                                    lineNumber: 73,
+                                    columnNumber: 19
+                                },
+                                __self: undefined
+                            })
+                        ]
+                    }, restaurant.info.id, true, {
                         fileName: "src/components/Body.js",
                         lineNumber: 71,
                         columnNumber: 17
@@ -40092,7 +40095,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _constant = require("../constant");
-const RestaurantCard = ({ name, cuisines, lastMileTravel, cloudinaryImageId, area })=>{
+const RestaurantCard = ({ name, cuisines, deliveryTime, cloudinaryImageId, area, totalRatingsString, areaName })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "card",
         children: [
@@ -40100,41 +40103,54 @@ const RestaurantCard = ({ name, cuisines, lastMileTravel, cloudinaryImageId, are
                 src: (0, _constant.IMG_CDN_URL) + cloudinaryImageId
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 15,
+                lineNumber: 17,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: name
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 16,
+                lineNumber: 18,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: cuisines.join(", ")
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 17,
+                lineNumber: 19,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: area
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 18,
+                lineNumber: 20,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: parseFloat(lastMileTravel).toFixed(2) + " KM"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "Area ",
+                    areaName
+                ]
+            }, void 0, true, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 19,
+                lineNumber: 21,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "Total rating ",
+                    totalRatingsString
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 22,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/RestaurantCard.js",
-        lineNumber: 14,
+        lineNumber: 16,
         columnNumber: 5
     }, undefined);
 };
